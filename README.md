@@ -16,4 +16,7 @@ If you execute ```./run.sh``` multiple times, you will be connected to the same 
 
 If you need to run different instance you can add argument to ./run.sh (ie ```./run.sh 2```). Default instance ID is 1 (so "./run.sh" = "./run.sh 1")
 
-For container cleanup (stop and remove running container) you can execute ```./cleanup.sh [instance ID]```
+For container cleanup (stop and remove running container) you can execute 
+```
+./cleanup.sh [instance ID]
+```
