@@ -7,7 +7,7 @@ To build image execute
 ./build.sh
 ```
 
-To run sandobx container instance execute
+To run sandobx container instance execute and ssh (using ssh agent) into it
 ```
 ./run.sh
 ```
