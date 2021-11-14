@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build . -t janpekar/testing-image
+docker build . -t janpekar/sandbox-container
