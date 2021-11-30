@@ -8,6 +8,8 @@ imageName=janpekar/sandbox-container
 if [ ! "$(docker ps -q -f name=$containerName)" ]; then
   #Start docker and pass public key to env variable
   docker run -e AUTHORIZED_KEY_ROOT="$(ssh-add -L)" -d --name $containerName $imageName
+  #Wait until container is started
+  sleep 1
 fi
 #Inspect container with id and get its ip
 ip=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $containerName)
