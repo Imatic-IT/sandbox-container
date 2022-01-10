@@ -7,7 +7,7 @@ imageName=janpekar/sandbox-container
 #Check if container is not running
 if [ ! "$(docker ps -q -f name=$containerName)" ]; then
   #Start docker and pass public key to env variable
-  docker run -e AUTHORIZED_KEY_ROOT="$(ssh-add -L)" -d --name $containerName $imageName
+  docker start $containerName 2>&1 || docker run -e AUTHORIZED_KEY_ROOT="$(ssh-add -L)" -d --name $containerName $imageName
   #Wait until container is started
   sleep 1
 fi
