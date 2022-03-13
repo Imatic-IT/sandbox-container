@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build . -t janpekar/sandbox-container
+docker build . ${1} -t janpekar/sandbox-container
