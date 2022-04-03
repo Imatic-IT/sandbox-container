@@ -15,5 +15,7 @@ if [ ! "$(docker ps -q -f name=$containerName)" ]; then
 fi
 #Inspect container with id and get its ip
 ip=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $containerName)
+#Remove previous known host key for $ip
+ssh-keygen -R "$ip"
 #Ssh to that IP - disable strict host key checking because identity of container changes
 ssh -o StrictHostKeyChecking=no -o ForwardAgent=yes root@$ip
