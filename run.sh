@@ -3,7 +3,7 @@ set -eu
 #You can specify arument to run multiple instances
 id="${1:-1}"
 #Docker run parameters
-runParams="${2}"
+runParams="${2:-}"
 containerName=sandbox-container-${id}
 imageName=janpekar/sandbox-container
 #Check if container is not running
