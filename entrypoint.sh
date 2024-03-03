@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/dumb-init /bin/bash
+
 function addAuthorizedKey { #{{{
 local user="${1?user}"
 local key="${2?key}"
